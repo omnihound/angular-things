@@ -1,0 +1,57 @@
+
+.bird {
+    mask-repeat: no-repeat;
+    mask-size: auto 100%;
+    -webkit-mask-image: url(./bird-cells-new.svg);
+    mask-image: url(./bird-cells-new.svg);
+	background-size: auto 100%;
+	width: 352px;
+	height: 500px;
+	will-change: background-position;
+	
+	animation-name: fly-cycle;
+	animation-duration: 1s;
+	animation-delay: -0.5s;
+	animation-timing-function: steps(10);
+	animation-iteration-count: infinite;
+}
+
+.bird-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	will-change: transform;
+}
+
+.bird-container-1 {
+    position: fixed;
+	bottom: -20%;
+	left: 1%;
+	transform: scale(30%);
+	will-change: transform;
+}
+
+.bird-container-2 {
+    position: fixed;
+	bottom: -10%;
+	left: -2%;
+	transform: scale(30%);
+	will-change: transform;
+}
+
+.bird-container-3 {
+    position: fixed;
+	bottom: -15%;
+	left: 0%;
+	transform: scale(30%);
+	will-change: transform;
+}
+
+@keyframes fly-cycle {
+	
+	100% {
+		mask-position: -3600px 0;
+	}
+	
+}

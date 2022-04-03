@@ -1,0 +1,21 @@
+<table class="table is-bordered is-striped is-fullwidth">
+    <thead>
+        <tr>
+            <th>Common Name</th>
+            <th>Official Name</th>
+            <th>Population</th>
+            <th>Flag</th>
+            <th>Coat Of Arms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr (click)="onClickHandler(country)" *ngFor="let country of countries()" class="is-clickable {{ country.name.official === selected.name.official ? 'is-selected' : '' }}">
+            <td>{{ country.name.common }}</td>
+            <td>{{ country.name.official }}</td>
+            <td>{{ country.population }}</td>
+            <td><img class="flag" src="{{country.flags.svg}}"/></td>
+            <td><img class="coat-of-arms" src="{{country.coatOfArms.svg}}"/></td>
+          </tr>
+    </tbody>
+  </table>
+  <app-birds [country]="this.country()" [prominent]="this.prominent()"></app-birds>
